@@ -2,17 +2,20 @@ package com.mysite.sbb;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
 
-    @GetMapping("/") //목록
-    public void index(){
-        System.out.println("index() 메서드 호출됨!");
+    @GetMapping("/")
+    @ResponseBody
+    public String index(){
+        return "sbb";
     }
 
-    @GetMapping("/hello") //등록
-    public void hell(){
-        System.out.println("hello() 메서드 호출됨!");
+    @GetMapping("/hello")
+    @ResponseBody
+    public String hell(){
+        return "hello";
     }
 }
